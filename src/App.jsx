@@ -5,7 +5,7 @@ import purchasedTVs from "./helpers/purchasedTVs.js";
 import toBeSoldTVs from "./helpers/toBeSoldTVs.js";
 import namingTVs from "./helpers/namingTVs.js";
 import priceTVs from "./helpers/priceTVs.js";
-import {bestSellingTv} from "./constants/inventory.js";
+import {bestSellingTv, inventory} from "./constants/inventory.js";
 import screenSizes from "./helpers/screenSizes.js";
 import showOutcomeInConsole from "./constants/oefenbestand.js";
 
@@ -28,6 +28,12 @@ function App() {
               <p className="tvSize">{screenSizes()}</p>
             </article>
           </span>
+          <ul>
+              {inventory.map(tvBrand => {
+                  return <li key={tvBrand.type}>{tvBrand.brand}</li>
+              })}
+          </ul>
+
       </>
   )
 }
